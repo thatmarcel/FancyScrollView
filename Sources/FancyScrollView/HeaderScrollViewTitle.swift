@@ -11,9 +11,8 @@ struct HeaderScrollViewTitle: View {
         return ZStack {
             HStack {
                 Text(title)
-                    .font(Font.system(size: 38).bold())
+                    .font(Font(UIFont.systemFont(ofSize: 36, weight: .bold)))
                     .foregroundColor(.white)
-                    .fontWeight(.black)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
                     .lineLimit(3)
@@ -21,7 +20,7 @@ struct HeaderScrollViewTitle: View {
                 
                 Spacer()
             }
-            .padding(.bottom, 0)
+            .padding(.bottom, 8)
             .opacity(sqrt(largeTitleOpacity))
 
             ZStack {
