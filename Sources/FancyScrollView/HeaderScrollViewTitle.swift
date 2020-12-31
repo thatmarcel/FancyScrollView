@@ -16,7 +16,7 @@ struct HeaderScrollViewTitle: View {
                     .fontWeight(.black)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
-                    .lineLimit(nil)
+                    .lineLimit(2)
                 
                 Spacer()
             }
