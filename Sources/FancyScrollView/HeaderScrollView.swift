@@ -38,12 +38,8 @@ struct HeaderScrollView: View {
                                     .offset(y: geometry.blurOffset)
 
                                 VStack {
-                                    /* geometry.largeTitleWeight == 1 ? HStack {
-                                        
-                                    }.frame(width: geometry.width, height: navigationBarHeight) : nil */
-                                    
                                     HStack {
-                                        BackButton(color: Color(UIColor.white.withAlphaComponent(CGFloat(geometry.largeTitleWeight))))
+                                        BackButton(color: geometry.largeTitleWeight == 1 ? Color.white : Color.clear)
                                         Spacer()
                                     }
                                     
