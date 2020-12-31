@@ -17,7 +17,8 @@ struct HeaderScrollViewTitle: View {
                     .multilineTextAlignment(.leading)
                     .lineLimit(3)
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding()
+                    .padding(.horizontal)
+                    .padding(.bottom, 16)
                 
                 Spacer()
             }
