@@ -16,7 +16,10 @@ struct HeaderScrollViewTitle: View {
                     .fontWeight(.black)
                     .padding(.horizontal, 16)
                     .fixedSize(horizontal: false, vertical: true)
+                
+                Spacer()
             }
+            .padding(.bottom, 0)
             .opacity(sqrt(largeTitleOpacity))
 
             ZStack {
