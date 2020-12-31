@@ -17,6 +17,8 @@ struct HeaderScrollViewTitle: View {
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
                     .fixedSize(horizontal: false, vertical: true)
+                
+                Spacer()
             }
             .padding(.bottom, 8)
             .opacity(sqrt(largeTitleOpacity))
