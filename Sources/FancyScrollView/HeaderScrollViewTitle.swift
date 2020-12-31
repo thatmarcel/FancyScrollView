@@ -15,12 +15,12 @@ struct HeaderScrollViewTitle: View {
                     .foregroundColor(.white)
                     .fontWeight(.black)
                     .padding(.horizontal, 16)
-                    .padding(.bottom, 16)
+                    .padding(.bottom, 24)
                     .fixedSize(horizontal: false, vertical: true)
                 
                 Spacer()
             }
-            .padding(.bottom, 8)
+            .padding(.bottom, 0)
             .opacity(sqrt(largeTitleOpacity))
 
             ZStack {
