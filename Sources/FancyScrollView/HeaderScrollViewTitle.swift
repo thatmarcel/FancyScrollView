@@ -37,7 +37,7 @@ struct HeaderScrollViewTitle: View {
                 }
             }
             .padding(.bottom, (height - 18) / 2)
-            .padding(.bottom, 8)
+            .padding(.bottom, 16)
             .opacity(sqrt(tinyTitleOpacity))
         }
     }
