@@ -42,6 +42,8 @@ struct HeaderScrollView: View {
                                         BackButton(color: .white)
                                         Spacer()
                                     }.frame(width: geometry.width, height: navigationBarHeight) : nil
+                                    
+                                    Spacer()
 
                                     HeaderScrollViewTitle(title: self.title,
                                                           height: navigationBarHeight,
