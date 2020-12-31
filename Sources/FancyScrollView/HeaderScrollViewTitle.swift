@@ -17,9 +17,11 @@ struct HeaderScrollViewTitle: View {
                     .multilineTextAlignment(.leading)
                     .lineLimit(3)
                     .padding()
+                    .layoutPriority(1)
 
                 Spacer()
             }
+            .layoutPriority(1)
             .padding(.bottom, 8)
             .opacity(sqrt(largeTitleOpacity))
 
