@@ -9,14 +9,19 @@ struct HeaderScrollViewTitle: View {
         let largeTitleOpacity = (max(largeTitle, 0.5) - 0.5) * 2
         let tinyTitleOpacity = 1 - min(largeTitle, 0.5) * 2
         return ZStack {
-            Text(title)
-            .font(Font(UIFont.systemFont(ofSize: 36, weight: .black)))
-            .foregroundColor(.white)
-            .padding(.horizontal, 16)
-            .padding(.bottom, 16)
-            .lineLimit(3)
-            .frame(alignment: .leading)
-            .multilineTextAlignment(.leading)
+            HStack {
+                Text(title)
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .fontWeight(.black)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(3)
+                    .padding()
+                    .padding(.horizontal, 16)
+
+                Spacer()
+            }
+            .padding(.bottom, 8)
             .opacity(sqrt(largeTitleOpacity))
 
             ZStack {
