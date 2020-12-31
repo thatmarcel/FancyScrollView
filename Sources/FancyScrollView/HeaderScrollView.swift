@@ -43,8 +43,6 @@ struct HeaderScrollView: View {
                                         Spacer()
                                     }.frame(width: geometry.width, height: navigationBarHeight) : nil
 
-                                    Spacer()
-
                                     HeaderScrollViewTitle(title: self.title,
                                                           height: navigationBarHeight,
                                                           largeTitle: geometry.largeTitleWeight).layoutPriority(1000)
