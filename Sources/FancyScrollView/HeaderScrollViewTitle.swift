@@ -15,8 +15,8 @@ struct HeaderScrollViewTitle: View {
                     .foregroundColor(.white)
                     .fontWeight(.black)
                     .padding(.horizontal, 16)
-                    .padding(.bottom, 32)
-                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.bottom, 16)
+                    .lineLimit(nil)
                 
                 Spacer()
             }
