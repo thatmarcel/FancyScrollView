@@ -17,6 +17,7 @@ struct HeaderScrollViewTitle: View {
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
                     .lineLimit(3)
+                    .fixedSize(horizontal: false, vertical: true)
                 
                 Spacer()
             }
