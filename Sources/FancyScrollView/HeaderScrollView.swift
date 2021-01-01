@@ -23,8 +23,7 @@ struct HeaderScrollView: View {
                     GeometryReader { geometry -> AnyView in
                         let geometry = self.geometry(from: geometry, safeArea: globalGeometry.safeAreaInsets)
                         let headerState = geometry.largeTitleWeight > 0.1
-                        if headerState != lastHeaderState, !stopHeaderStateUpdates { headerStateCallback?(headerState) }
-                        lastHeaderState = headerState
+                        if headerState != lastHeaderState, !stopHeaderStateUpdates { headerStateCallback?(headerState); lastHeaderState = headerState }
                         return AnyView(
                             self.header
                                 .frame(width: geometry.width, height: geometry.headerHeight)
@@ -35,6 +34,7 @@ struct HeaderScrollView: View {
                     }
                     .frame(width: globalGeometry.size.width, height: self.headerHeight)
                     .onDisappear { stopHeaderStateUpdates = true }
+                    .onAppear { stopHeaderStateUpdates = false }
 
                     GeometryReader { geometry -> AnyView in
                         let geometry = self.geometry(from: geometry, safeArea: globalGeometry.safeAreaInsets)
