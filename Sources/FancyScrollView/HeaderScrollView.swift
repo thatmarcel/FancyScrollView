@@ -14,7 +14,7 @@ struct HeaderScrollView: View {
     let header: AnyView
     let content: AnyView
     
-    var lastHeaderState: Bool = false
+    @State var lastHeaderState: Bool = false
 
     var body: some View {
         GeometryReader { globalGeometry in
