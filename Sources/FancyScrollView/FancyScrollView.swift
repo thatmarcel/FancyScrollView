@@ -1,6 +1,6 @@
 import SwiftUI
 
-typealias BoolCallback = (Bool) -> Void
+public typealias BoolCallback = (Bool) -> Void
 
 public struct FancyScrollView: View {
     let title: String
