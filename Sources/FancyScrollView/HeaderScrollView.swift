@@ -11,7 +11,7 @@ struct HeaderScrollView: View {
     let headerHeight: CGFloat
     let scrollUpBehavior: ScrollUpHeaderBehavior
     let scrollDownBehavior: ScrollDownHeaderBehavior
-    let headerStateCallback: BoolCallback?
+    var headerStateCallback: BoolCallback?
     let header: AnyView
     let content: AnyView
 
