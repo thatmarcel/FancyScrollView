@@ -20,7 +20,7 @@ struct HeaderScrollView: View {
                 VStack(spacing: 0) {
                     GeometryReader { geometry -> AnyView in
                         let geometry = self.geometry(from: geometry, safeArea: globalGeometry.safeAreaInsets)
-                        headerStateCallback?(geometry.largeTitleWeight < 0.1)
+                        headerStateCallback?(geometry.largeTitleWeight > 0.1)
                         return AnyView(
                             self.header
                                 .frame(width: geometry.width, height: geometry.headerHeight)
