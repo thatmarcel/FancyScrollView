@@ -33,6 +33,7 @@ struct HeaderScrollView: View {
                         )
                     }
                     .frame(width: globalGeometry.size.width, height: self.headerHeight)
+                    .onDisappear { headerStateCallback = nil }
 
                     GeometryReader { geometry -> AnyView in
                         let geometry = self.geometry(from: geometry, safeArea: globalGeometry.safeAreaInsets)
