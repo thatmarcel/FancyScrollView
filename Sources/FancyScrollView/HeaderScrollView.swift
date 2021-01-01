@@ -1,6 +1,7 @@
 import SwiftUI
 
 private let navigationBarHeight: CGFloat = 44
+private var var lastHeaderState: Bool = false
 
 struct HeaderScrollView: View {
     @Environment(\.colorScheme)
@@ -13,8 +14,6 @@ struct HeaderScrollView: View {
     let headerStateCallback: BoolCallback?
     let header: AnyView
     let content: AnyView
-    
-    @State var lastHeaderState: Bool = false
 
     var body: some View {
         GeometryReader { globalGeometry in
