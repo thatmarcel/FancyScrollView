@@ -2,6 +2,7 @@ import SwiftUI
 
 private let navigationBarHeight: CGFloat = 44
 private var lastHeaderState: Bool = false
+private var stopHeaderStateUpdates: Bool = false
 
 struct HeaderScrollView: View {
     @Environment(\.colorScheme)
@@ -11,7 +12,7 @@ struct HeaderScrollView: View {
     let headerHeight: CGFloat
     let scrollUpBehavior: ScrollUpHeaderBehavior
     let scrollDownBehavior: ScrollDownHeaderBehavior
-    var headerStateCallback: BoolCallback?
+    let headerStateCallback: BoolCallback?
     let header: AnyView
     let content: AnyView
 
@@ -22,7 +23,7 @@ struct HeaderScrollView: View {
                     GeometryReader { geometry -> AnyView in
                         let geometry = self.geometry(from: geometry, safeArea: globalGeometry.safeAreaInsets)
                         let headerState = geometry.largeTitleWeight > 0.1
-                        if headerState != lastHeaderState { headerStateCallback?(headerState) }
+                        if headerState != lastHeaderState, !stopHeaderStateUpdates { headerStateCallback?(headerState) }
                         lastHeaderState = headerState
                         return AnyView(
                             self.header
@@ -33,7 +34,7 @@ struct HeaderScrollView: View {
                         )
                     }
                     .frame(width: globalGeometry.size.width, height: self.headerHeight)
-                    .onDisappear { headerStateCallback = nil }
+                    .onDisappear { stopHeaderStateUpdates = true }
 
                     GeometryReader { geometry -> AnyView in
                         let geometry = self.geometry(from: geometry, safeArea: globalGeometry.safeAreaInsets)
