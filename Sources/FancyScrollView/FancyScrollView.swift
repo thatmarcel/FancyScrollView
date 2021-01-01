@@ -1,10 +1,13 @@
 import SwiftUI
 
+typealias BoolCallback = (Bool) -> Void
+
 public struct FancyScrollView: View {
     let title: String
     let headerHeight: CGFloat
     let scrollUpHeaderBehavior: ScrollUpHeaderBehavior
     let scrollDownHeaderBehavior: ScrollDownHeaderBehavior
+    let headerStateCallback: BoolCallback?
     let header: AnyView?
     let content: AnyView
 
@@ -15,6 +18,7 @@ public struct FancyScrollView: View {
                                  headerHeight: headerHeight,
                                  scrollUpBehavior: scrollUpHeaderBehavior,
                                  scrollDownBehavior: scrollDownHeaderBehavior,
+                                 headerStateCallback: headerStateCallback,
                                  header: header,
                                  content: content)
             )
@@ -48,6 +52,7 @@ extension FancyScrollView {
                                   headerHeight: CGFloat = 300,
                                   scrollUpHeaderBehavior: ScrollUpHeaderBehavior = .parallax,
                                   scrollDownHeaderBehavior: ScrollDownHeaderBehavior = .offset,
+                                  headerStateCallback: BoolCallback? = nil,
                                   header: () -> A?,
                                   content: () -> B) {
 
@@ -55,6 +60,7 @@ extension FancyScrollView {
                   headerHeight: headerHeight,
                   scrollUpHeaderBehavior: scrollUpHeaderBehavior,
                   scrollDownHeaderBehavior: scrollDownHeaderBehavior,
+                  headerStateCallback: headerStateCallback,
                   header: AnyView(header()),
                   content: AnyView(content()))
     }
@@ -69,6 +75,7 @@ extension FancyScrollView {
                      headerHeight: headerHeight,
                      scrollUpHeaderBehavior: scrollUpHeaderBehavior,
                      scrollDownHeaderBehavior: scrollDownHeaderBehavior,
+                     headerStateCallback: nil,
                      header: nil,
                      content: AnyView(content()))
        }
