@@ -1,7 +1,7 @@
 import SwiftUI
 
 private let navigationBarHeight: CGFloat = 44
-private var var lastHeaderState: Bool = false
+private var lastHeaderState: Bool = false
 
 struct HeaderScrollView: View {
     @Environment(\.colorScheme)
